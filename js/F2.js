@@ -147,16 +147,15 @@ function hitungAlkohol() {
   const hasilDiv = document.getElementById("hasilAlkohol");
   if (hasilDiv) {
     hasilDiv.innerHTML = `
-            <p><strong>📊 Data Input:</strong></p>
+            <p><strong>Data Input:</strong></p>
             <ul>
                 <li>Rata-rata waktu alkohol (t<sub>b</sub>) = ${tb.toFixed(4)} s</li>
                 <li>Massa jenis alkohol (ρ<sub>alkohol</sub>) = ${rhoAlkohol} kg/m³</li>
                 <li>Rata-rata waktu air (t<sub>a</sub>) = ${ta.toFixed(4)} s</li>
                 <li>Viskositas air (η<sub>air</sub>) = ${etaAir.toExponential(6)} Pa·s</li>
             </ul>
-            <p><strong>🍶 Viskositas Alkohol:</strong></p>
-            <p class="hasil-utama">η<sub>alkohol</sub> = ${etaAlkohol.toExponential(6)} Pa·s</p>
-            <p>Rumus: η<sub>alkohol</sub> = (ρ<sub>alkohol</sub>·t<sub>b</sub>) / (ρ<sub>air</sub>·t<sub>a</sub>) × η<sub>air</sub></p>
+            <p><strong>Viskositas Alkohol:</strong></p>
+            <p>η<sub>alkohol</sub> = ${etaAlkohol.toExponential(6)} Pa·s</p>
         `;
     hasilDiv.style.display = "block";
   }
@@ -186,7 +185,7 @@ function hitungGliserin() {
   const hasilDiv = document.getElementById("hasilGliserin");
   if (hasilDiv) {
     hasilDiv.innerHTML = `
-            <p><strong>📊 Data Input:</strong></p>
+            <p><strong>Data Input:</strong></p>
             <ul>
                 <li>Rata-rata massa bola (m<sub>avg</sub>) = ${m.toExponential(6)} kg</li>
                 <li>Rata-rata diameter bola (d<sub>avg</sub>) = ${d.toExponential(6)} m</li>
@@ -195,9 +194,8 @@ function hitungGliserin() {
                 <li>Massa jenis gliserin (ρ<sub>gliserin</sub>) = ${rhoGliserin} kg/m³</li>
                 <li>Gravitasi (g) = ${g} m/s²</li>
             </ul>
-            <p><strong>🧪 Viskositas Gliserin (Hukum Stokes):</strong></p>
-            <p class="hasil-utama">η<sub>gliserin</sub> = ${etaGliserin.toExponential(6)} Pa·s</p>
-            <p>Rumus: η = (g·t)/(3·h) × [ m/(π·d) - (d²·ρ<sub>gliserin</sub>)/6 ]</p>
+            <p><strong>Viskositas Gliserin (Hukum Stokes):</strong></p>
+            <p>η<sub>gliserin</sub> = ${etaGliserin.toExponential(6)} Pa·s</p>
         `;
     hasilDiv.style.display = "block";
   }

@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>HIMAFI UNAIR - Himpunan Mahasiswa Fisika Universitas Airlangga</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/f2.css" />
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -82,55 +85,154 @@
           <!-- Daftar kode praktikum yang akan memiliki kalkulator nanti -->
           <div class="praktikum-item" data-code="G1">
             <h3>G1</h3>
-            <p>Gerak Harmonik Sederhana</p>
+            <p>Gelombang Bunyi</p>
             <button class="btn-kalkulator" data-kode="G1">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="M1">
             <h3>M1</h3>
-            <p>Momen Inersia</p>
+            <p>Percepatan Gravitasi</p>
             <button class="btn-kalkulator" data-kode="M1">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="H1">
             <h3>H1</h3>
-            <p>Hukum Hooke</p>
+            <p>Tetapan Pegas</p>
             <button class="btn-kalkulator" data-kode="H1">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="F1">
             <h3>F1</h3>
-            <p>Fluida Statis</p>
+            <p>Tegangan Permukaan</p>
             <button class="btn-kalkulator" data-kode="F1">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="F2">
             <h3>F2</h3>
-            <p>Fluida Dinamis</p>
-            <button class="btn-kalkulator" data-kode="F2">Buka Kalkulator</button>
+            <p>Viskositas Fluida</p>
+            <button class="btn-kalkulator" data-kode="F2" data-full="true">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="K1">
             <h3>K1</h3>
-            <p>Kalorimeter</p>
+            <p>Koefisien Muai Panjang</p>
             <button class="btn-kalkulator" data-kode="K1">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="K4">
             <h3>K4</h3>
-            <p>Konduktivitas Termal</p>
+            <p>Kalorimeter Bom</p>
             <button class="btn-kalkulator" data-kode="K4">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="M3">
             <h3>M3</h3>
-            <p>Modulus Young</p>
+            <p>Energi dan Momentum</p>
             <button class="btn-kalkulator" data-kode="M3">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="M2">
             <h3>M2</h3>
-            <p>Momentum</p>
+            <p>Hukum Giroskop</p>
             <button class="btn-kalkulator" data-kode="M2">Buka Kalkulator</button>
           </div>
           <div class="praktikum-item" data-code="P1">
             <h3>P1</h3>
-            <p>Pegas Seri Paralel</p>
+            <p>Kerapatan Zat</p>
             <button class="btn-kalkulator" data-kode="P1">Buka Kalkulator</button>
           </div>
         </div>
+
+        <!-- MODAL F2 - Viskositas Fluida -->
+        <div id="modalF2" class="modal-f2">
+          <div class="modal-f2-content">
+            <div class="modal-f2-header">
+              <h2><i class="fas fa-flask"></i> Praktikum F2 - Viskositas Fluida</h2>
+              <span class="modal-f2-close">&times;</span>
+            </div>
+
+            <!-- PDF SECTION -->
+            <div class="pdf-section">
+              <div class="pdf-tabs">
+                <button class="pdf-tab active" data-pdf="ostwald">📄 Viskosimeter Ostwald (Air & Alkohol)</button>
+                <button class="pdf-tab" data-pdf="stokes">📄 Hukum Stokes (Gliserin)</button>
+              </div>
+              <div class="pdf-viewer-container">
+                <iframe id="pdfViewer" class="pdf-viewer" src="assets/pdf/modul_ostwald.pdf"></iframe>
+              </div>
+              <div class="pdf-download-buttons">
+                <button id="downloadOstwald" class="btn-pdf-download"><i class="fas fa-download"></i> Download PDF Ostwald</button>
+                <button id="downloadStokes" class="btn-pdf-download"><i class="fas fa-download"></i> Download PDF Stokes</button>
+              </div>
+            </div>
+
+            <!-- KALKULATOR SECTION -->
+            <div class="kalkulator-section-f2">
+              <h3><i class="fas fa-calculator"></i> Kalkulator Analisis Data</h3>
+              <div class="kalkulator-tabs">
+                <button class="kalkulator-tab active" data-tab="air">💧 Air</button>
+                <button class="kalkulator-tab" data-tab="alkohol">🍶 Alkohol</button>
+                <button class="kalkulator-tab" data-tab="gliserin">🧪 Gliserin (Stokes)</button>
+              </div>
+
+              <!-- TAB AIR -->
+              <div id="tabAir" class="kalkulator-tab-content active">
+                <h4>Viskosimeter Ostwald - Air</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>10 Data Waktu Air (s) <i class="fas fa-info-circle" title="Pisahkan dengan koma, contoh: 5.2,5.3,5.1,5.4,5.2,5.3,5.1,5.2,5.3,5.2"></i></label>
+                    <input type="text" id="waktuAir" placeholder="t1,t2,t3,...,t10" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Suhu Ruang T (°C)</label>
+                    <input type="number" id="suhuAir" step="0.1" placeholder="Contoh: 25" class="form-control" />
+                  </div>
+                </div>
+                <button class="btn-hitung-f2" onclick="hitungAir()"><i class="fas fa-chart-line"></i> Hitung Viskositas Air</button>
+                <div id="hasilAir" class="hasil-f2" style="display: none"></div>
+              </div>
+
+              <!-- TAB ALKOHOL -->
+              <div id="tabAlkohol" class="kalkulator-tab-content">
+                <h4>Viskosimeter Ostwald - Alkohol</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>10 Data Waktu Alkohol (s)</label>
+                    <input type="text" id="waktuAlkohol" placeholder="t1,t2,t3,...,t10" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Massa Jenis Alkohol (kg/m³)</label>
+                    <input type="number" id="rhoAlkohol" step="1" placeholder="Contoh: 789" class="form-control" />
+                  </div>
+                </div>
+                <button class="btn-hitung-f2" onclick="hitungAlkohol()"><i class="fas fa-calculator"></i> Hitung Viskositas Alkohol</button>
+                <div id="hasilAlkohol" class="hasil-f2" style="display: none"></div>
+              </div>
+
+              <!-- TAB GLISERIN -->
+              <div id="tabGliserin" class="kalkulator-tab-content">
+                <h4>Hukum Stokes - Gliserin</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Rata-rata Massa Bola (kg)</label>
+                    <input type="number" id="massaBola" step="0.0001" placeholder="Contoh: 0.005" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Rata-rata Diameter Bola (m)</label>
+                    <input type="number" id="diameterBola" step="0.0001" placeholder="Contoh: 0.008" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Rata-rata Waktu (s)</label>
+                    <input type="number" id="waktuGliserin" step="0.01" placeholder="Contoh: 5.5" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Jarak Tempuh h (m)</label>
+                    <input type="number" id="jarakGliserin" step="0.01" placeholder="Contoh: 0.5" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Massa Jenis Gliserin (kg/m³)</label>
+                    <input type="number" id="rhoGliserin" step="10" placeholder="Contoh: 1260" class="form-control" />
+                  </div>
+                </div>
+                <button class="btn-hitung-f2" onclick="hitungGliserin()"><i class="fas fa-calculator"></i> Hitung Viskositas Gliserin</button>
+                <div id="hasilGliserin" class="hasil-f2" style="display: none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Modal Kalkulator (sementara, bisa dikembangkan lebih lanjut) -->
         <div id="kalkulatorModal" class="modal">
           <div class="modal-content">
@@ -306,7 +408,6 @@
                   </p>
                 </div>
               </blockquote>
-              <script async src="//www.instagram.com/embed.js"></script>
             </div>
 
             <!-- Postingan 2 -->
@@ -405,8 +506,6 @@
                   </p>
                 </div>
               </blockquote>
-              <script async src="//www.instagram.com/embed.js"></script>
-              <script async src="//www.instagram.com/embed.js"></script>
             </div>
 
             <!-- Postingan 3 -->
@@ -505,11 +604,8 @@
                   </p>
                 </div>
               </blockquote>
-              <script async src="//www.instagram.com/embed.js"></script>
             </div>
           </div>
-
-          <script async src="//www.instagram.com/embed.js"></script>
 
           <p class="feed-note"><i class="fab fa-instagram"></i> Klik postingan untuk melihat di Instagram</p>
         </div>
@@ -519,12 +615,12 @@
     <!-- FOOTER -->
     <footer>
       <div class="container">
-        <p>&copy; 2025 HIMAFI UNAIR - Himpunan Mahasiswa Fisika Universitas Airlangga</p>
+        <p>&copy; 2026 HIMAFI UNAIR - Himpunan Mahasiswa Fisika Universitas Airlangga</p>
       </div>
     </footer>
 
     <script src="js/script.js"></script>
-    <!-- Instagram Embed JS -->
+    <script src="js/F2.js"></script>
     <script async src="//www.instagram.com/embed.js"></script>
   </body>
 </html>

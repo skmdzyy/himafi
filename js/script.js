@@ -10,7 +10,8 @@
 // CONSTANTS & DEFAULTS
 // ============================================================
 
-const ADMIN_USERNAME        = 'admin';
+const ADMIN_USER_KEY        = 'himafi_admin_user';
+const ADMIN_DEFAULT_USER    = 'admin';
 const ADMIN_PASS_HASH_KEY   = 'himafi_admin_hash';
 const ADMIN_DEFAULT_PASS    = 'himafi1983';
 const SESSION_TOKEN_KEY     = 'himafi_session_token';
@@ -20,6 +21,10 @@ const LOCKOUT_KEY           = 'himafi_lockout_until';
 const ATTEMPT_KEY           = 'himafi_login_attempts';
 const MAX_ATTEMPTS          = 5;
 const LOCKOUT_DURATION      = 15 * 60 * 1000;           // 15 menit
+
+function getAdminUsername() {
+  return localStorage.getItem(ADMIN_USER_KEY) || ADMIN_DEFAULT_USER;
+}
 
 const ORG_DATA_KEY          = 'himafi_org_data';
 const MINISTRY_DATA_KEY     = 'himafi_ministries_data';
@@ -154,6 +159,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   setupNavbar();
   setupLoginForm();
+  setupChangePassForm();
   setupHeroBgInput();
   setupOrgForm();
   setupAgendaForm();
@@ -178,7 +184,7 @@ async function sha256(message) {
 
 async function initAdminHash() {
   if (!localStorage.getItem(ADMIN_PASS_HASH_KEY)) {
-    const h = await sha256(ADMIN_USERNAME + ':' + ADMIN_DEFAULT_PASS);
+    const h = await sha256(getAdminUsername() + ':' + ADMIN_DEFAULT_PASS);
     localStorage.setItem(ADMIN_PASS_HASH_KEY, h);
   }
 }
@@ -298,6 +304,71 @@ function setupLoginForm() {
   }
 }
 
+function setupChangePassForm() {
+  const btn = document.getElementById('btnChangePassNav');
+  if (btn) btn.addEventListener('click', e => { e.preventDefault(); openChangePassModal(); });
+
+  const form = document.getElementById('changePassForm');
+  if (form) {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      await handleChangePassword();
+    });
+  }
+}
+
+function openChangePassModal() {
+  if (!isAdmin) return;
+  const userInput = document.getElementById('changeUser');
+  if (userInput) userInput.value = getAdminUsername();
+  resetForm('changePassForm');
+  if (userInput) userInput.value = getAdminUsername();
+  openModal('changePassModal');
+}
+
+async function handleChangePassword() {
+  if (!isAdmin) return;
+
+  const currentPass = sanitizeInput(getVal('changeOldPass'));
+  const newUser     = sanitizeInput(getVal('changeUser'));
+  const newPass     = sanitizeInput(getVal('changeNewPass'));
+  const confirmPass = sanitizeInput(getVal('changeConfirmPass'));
+
+  if (!currentPass || !newUser || !newPass || !confirmPass) {
+    showToast('Semua field wajib diisi!', 'error');
+    return;
+  }
+
+  // Verifikasi password lama
+  const currentHash  = await sha256(getAdminUsername() + ':' + currentPass);
+  const storedHash   = localStorage.getItem(ADMIN_PASS_HASH_KEY);
+
+  if (currentHash !== storedHash) {
+    showToast('Password lama tidak sesuai!', 'error');
+    return;
+  }
+
+  if (newPass.length < 6) {
+    showToast('Password baru minimal 6 karakter!', 'error');
+    return;
+  }
+
+  if (newPass !== confirmPass) {
+    showToast('Konfirmasi password baru tidak cocok!', 'error');
+    return;
+  }
+
+  // Update Username & Password Hash
+  const newHash = await sha256(newUser + ':' + newPass);
+  localStorage.setItem(ADMIN_USER_KEY, newUser);
+  localStorage.setItem(ADMIN_PASS_HASH_KEY, newHash);
+
+  closeModal('changePassModal');
+  showToast('Username & Password Admin berhasil diperbarui!', 'success');
+}
+
+window.openChangePassModal = openChangePassModal;
+
 async function handleLogin() {
   // 1. Cek lockout
   if (isLockedOut()) {
@@ -326,7 +397,7 @@ async function handleLogin() {
 
   const inputHash    = await sha256(usernameRaw + ':' + passwordRaw);
   const storedHash   = localStorage.getItem(ADMIN_PASS_HASH_KEY);
-  const usernameMatch = usernameRaw === ADMIN_USERNAME;
+  const usernameMatch = usernameRaw === getAdminUsername();
 
   if (!usernameMatch || inputHash !== storedHash) {
     recordFailedAttempt();
@@ -362,22 +433,25 @@ function logoutAdmin() {
 }
 
 function applyAdminState() {
-  const badge  = document.getElementById('adminBadge');
-  const navBtn = document.getElementById('navLoginBtn');
-  const heroBtn = document.getElementById('changeHeroBgBtn');
-  const body   = document.body;
+  const badge      = document.getElementById('adminBadge');
+  const navBtn     = document.getElementById('navLoginBtn');
+  const heroBtn    = document.getElementById('changeHeroBgBtn');
+  const changeBtn  = document.getElementById('btnChangePassNav');
+  const body       = document.body;
 
   if (isAdmin) {
-    if (badge)   { badge.style.display = 'inline-flex'; }
-    if (navBtn)  {
+    if (badge)     { badge.style.display = 'inline-flex'; }
+    if (changeBtn) { changeBtn.style.display = 'inline-flex'; }
+    if (navBtn)    {
       navBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
       navBtn.onclick   = e => { e.preventDefault(); logoutAdmin(); showToast('Logout berhasil.','info'); };
     }
     if (heroBtn) heroBtn.style.display = 'inline-flex';
     body.classList.add('admin-active');
   } else {
-    if (badge)   { badge.style.display = 'none'; }
-    if (navBtn)  {
+    if (badge)     { badge.style.display = 'none'; }
+    if (changeBtn) { changeBtn.style.display = 'none'; }
+    if (navBtn)    {
       navBtn.innerHTML = '<i class="fas fa-user-shield"></i> Login Admin';
       navBtn.onclick   = e => { e.preventDefault(); openLoginModal(); };
     }

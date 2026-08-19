@@ -43,6 +43,9 @@
       <span class="admin-badge" id="adminBadge">
         <i class="fas fa-shield-alt"></i> Admin Aktif
       </span>
+      <button class="btn-login-nav" id="btnChangePassNav" style="display:none;background:rgba(255,255,255,0.12);color:var(--white);">
+        <i class="fas fa-key"></i> Ganti Akun
+      </button>
       <button class="btn-login-nav" id="navLoginBtn">
         <i class="fas fa-user-shield"></i> Login Admin
       </button>
@@ -343,6 +346,43 @@
       <p style="font-size:0.74rem;color:var(--mid-gray);text-align:center;margin-top:14px;">
         <i class="fas fa-shield-alt"></i> Dilindungi SHA-256 · Lockout 15 menit setelah 5 kali gagal
       </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     MODAL 1.5: GANTI AKUN / PASSWORD ADMIN
+     ============================================================ -->
+<div class="modal-overlay" id="changePassModal">
+  <div class="modal-box" style="max-width:440px;">
+    <div class="modal-head">
+      <h3><i class="fas fa-key"></i> Pengaturan Akun Admin</h3>
+      <button class="modal-close" onclick="closeModal('changePassModal')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="changePassForm" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="changeOldPass">Password Lama Saat Ini</label>
+          <input type="password" id="changeOldPass" class="form-control" placeholder="Masukkan password lama" required maxlength="64" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="changeUser">Username Baru</label>
+          <input type="text" id="changeUser" class="form-control" placeholder="Username baru admin" required maxlength="32" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="changeNewPass">Password Baru (min 6 karakter)</label>
+          <input type="password" id="changeNewPass" class="form-control" placeholder="Password baru" required minlength="6" maxlength="64" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="changeConfirmPass">Konfirmasi Password Baru</label>
+          <input type="password" id="changeConfirmPass" class="form-control" placeholder="Ketik ulang password baru" required minlength="6" maxlength="64" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;">
+          <i class="fas fa-save"></i> Simpan Perubahan Akun
+        </button>
+      </form>
     </div>
   </div>
 </div>

@@ -235,6 +235,29 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .btn-login-nav:hover { background: var(--gold-light); transform: translateY(-1px); }
 
+.btn-logout-nav {
+  background: rgba(220, 38, 38, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  min-height: 38px;
+}
+.btn-logout-nav:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+  transform: translateY(-1px);
+}
+
 /* Admin Dropdown Wrap */
 .admin-dropdown-wrap {
   position: relative;

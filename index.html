@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=3.0" />
+    <link rel="stylesheet" href="css/style.css?v=4.0" />
   </head>
   <body>
     <!-- ============================================================
@@ -39,33 +39,40 @@
         </ul>
 
         <div class="nav-right">
+          <!-- Logged-out state button -->
           <button class="btn-login-nav" id="navLoginBtn">
             <i class="fas fa-user-shield"></i> Login Admin
           </button>
 
+          <!-- Logged-in state controls -->
           <div class="admin-dropdown-wrap" id="adminDropdownWrap" style="display:none;">
-            <button class="btn-admin-menu" id="adminMenuTrigger">
-              <i class="fas fa-user-check"></i> Panel Admin <i class="fas fa-chevron-down" style="font-size:0.7rem;margin-left:2px;"></i>
+            <button class="btn-admin-menu" id="adminMenuTrigger" type="button">
+              <i class="fas fa-user-cog"></i> Panel Admin <i class="fas fa-chevron-down" style="font-size:0.68rem;margin-left:2px;"></i>
             </button>
             <div class="admin-dropdown-menu" id="adminDropdownMenu">
               <div class="admin-dropdown-header">
                 <i class="fas fa-shield-alt"></i> Panel Admin HIMAFI
               </div>
-              <a href="#" onclick="openChangePassModal(); closeAdminMenu(); event.preventDefault();">
+              <a href="#" id="menuChangePass">
                 <i class="fas fa-key"></i> Pengaturan Akun
               </a>
-              <a href="#" onclick="openHeroBgModal(); closeAdminMenu(); event.preventDefault();">
+              <a href="#" id="menuHeroBg">
                 <i class="fas fa-image"></i> Background Beranda
               </a>
-              <a href="#" onclick="openAddPengumuman(); closeAdminMenu(); event.preventDefault();">
+              <a href="#" id="menuAddPengumuman">
                 <i class="fas fa-bullhorn"></i> Tambah Pengumuman
               </a>
               <div class="admin-dropdown-divider"></div>
-              <a href="#" onclick="logoutAdmin(); closeAdminMenu(); event.preventDefault();" class="logout-link">
+              <a href="#" id="menuLogout" class="logout-link">
                 <i class="fas fa-sign-out-alt"></i> Logout Admin
               </a>
             </div>
           </div>
+
+          <!-- Direct Logout button on navbar when logged in -->
+          <button class="btn-logout-nav" id="navLogoutBtn" style="display:none;" type="button">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
 
           <div class="hamburger" id="hamburger">
             <span></span><span></span><span></span>
@@ -545,7 +552,7 @@
     <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-    <script src="js/arxiv.js?v=3.0"></script>
-    <script src="js/script.js?v=3.0"></script>
+    <script src="js/arxiv.js?v=4.0"></script>
+    <script src="js/script.js?v=4.0"></script>
   </body>
 </html>

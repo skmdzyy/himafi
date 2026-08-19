@@ -295,19 +295,37 @@ function setupLoginForm() {
   const navBtn = document.getElementById('navLoginBtn');
   if (navBtn) navBtn.addEventListener('click', e => { e.preventDefault(); openLoginModal(); });
 
+  const logoutBtn = document.getElementById('navLogoutBtn');
+  if (logoutBtn) logoutBtn.addEventListener('click', e => { e.preventDefault(); logoutAdmin(); showToast('Logout berhasil.','info'); });
+
+  const trigger = document.getElementById('adminMenuTrigger');
+  if (trigger) {
+    trigger.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleAdminMenu();
+    });
+  }
+
+  const menuChangePass = document.getElementById('menuChangePass');
+  if (menuChangePass) menuChangePass.addEventListener('click', e => { e.preventDefault(); openChangePassModal(); closeAdminMenu(); });
+
+  const menuHeroBg = document.getElementById('menuHeroBg');
+  if (menuHeroBg) menuHeroBg.addEventListener('click', e => { e.preventDefault(); openHeroBgModal(); closeAdminMenu(); });
+
+  const menuAddPeng = document.getElementById('menuAddPengumuman');
+  if (menuAddPeng) menuAddPeng.addEventListener('click', e => { e.preventDefault(); openAddPengumuman(); closeAdminMenu(); });
+
+  const menuLogout = document.getElementById('menuLogout');
+  if (menuLogout) menuLogout.addEventListener('click', e => { e.preventDefault(); logoutAdmin(); closeAdminMenu(); showToast('Logout berhasil.','info'); });
+
   const form = document.getElementById('loginForm');
   if (form) {
     form.addEventListener('submit', async e => {
       e.preventDefault();
       await handleLogin();
     });
-  }
-}
-
 function setupChangePassForm() {
-  const btn = document.getElementById('btnChangePassNav');
-  if (btn) btn.addEventListener('click', e => { e.preventDefault(); openChangePassModal(); });
-
   const form = document.getElementById('changePassForm');
   if (form) {
     form.addEventListener('submit', async e => {
@@ -339,7 +357,6 @@ async function handleChangePassword() {
     return;
   }
 
-  // Verifikasi password lama
   const currentHash  = await sha256(getAdminUsername() + ':' + currentPass);
   const storedHash   = localStorage.getItem(ADMIN_PASS_HASH_KEY);
 
@@ -358,7 +375,6 @@ async function handleChangePassword() {
     return;
   }
 
-  // Update Username & Password Hash
   const newHash = await sha256(newUser + ':' + newPass);
   localStorage.setItem(ADMIN_USER_KEY, newUser);
   localStorage.setItem(ADMIN_PASS_HASH_KEY, newHash);
@@ -370,7 +386,6 @@ async function handleChangePassword() {
 window.openChangePassModal = openChangePassModal;
 
 async function handleLogin() {
-  // 1. Cek lockout
   if (isLockedOut()) {
     const secs = getRemainingLockout();
     const mins = Math.ceil(secs / 60);
@@ -378,7 +393,6 @@ async function handleLogin() {
     return;
   }
 
-  // 2. Validasi CAPTCHA
   const captchaVal = parseInt((document.getElementById('captchaInput')?.value || ''), 10);
   if (isNaN(captchaVal) || captchaVal !== captchaAnswer) {
     showToast('Jawaban CAPTCHA salah!', 'error');
@@ -386,7 +400,6 @@ async function handleLogin() {
     return;
   }
 
-  // 3. Sanitize & hash input
   const usernameRaw = sanitizeInput(document.getElementById('loginUser')?.value || '');
   const passwordRaw = sanitizeInput(document.getElementById('loginPass')?.value || '');
 
@@ -412,7 +425,6 @@ async function handleLogin() {
     return;
   }
 
-  // 4. Login berhasil
   clearAttempts();
   const token = generateToken();
   localStorage.setItem(SESSION_TOKEN_KEY, token);
@@ -435,22 +447,24 @@ function logoutAdmin() {
 function applyAdminState() {
   const navBtn     = document.getElementById('navLoginBtn');
   const dropdown   = document.getElementById('adminDropdownWrap');
+  const logoutBtn  = document.getElementById('navLogoutBtn');
   const heroBtn    = document.getElementById('changeHeroBgBtn');
   const body       = document.body;
 
   if (isAdmin) {
-    if (navBtn)   navBtn.style.display = 'none';
-    if (dropdown) dropdown.style.display = 'inline-block';
-    if (heroBtn)  heroBtn.style.display = 'inline-flex';
+    if (navBtn)    navBtn.style.display = 'none';
+    if (dropdown)  dropdown.style.display = 'inline-block';
+    if (logoutBtn) logoutBtn.style.display = 'inline-flex';
+    if (heroBtn)   heroBtn.style.display = 'inline-flex';
     body.classList.add('admin-active');
   } else {
     if (navBtn) {
       navBtn.style.display = 'inline-flex';
       navBtn.innerHTML = '<i class="fas fa-user-shield"></i> Login Admin';
-      navBtn.onclick   = e => { e.preventDefault(); openLoginModal(); };
     }
-    if (dropdown) dropdown.style.display = 'none';
-    if (heroBtn)  heroBtn.style.display = 'none';
+    if (dropdown)  dropdown.style.display = 'none';
+    if (logoutBtn) logoutBtn.style.display = 'none';
+    if (heroBtn)   heroBtn.style.display = 'none';
     body.classList.remove('admin-active');
   }
 

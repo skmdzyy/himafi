@@ -433,29 +433,24 @@ function logoutAdmin() {
 }
 
 function applyAdminState() {
-  const badge      = document.getElementById('adminBadge');
   const navBtn     = document.getElementById('navLoginBtn');
+  const dropdown   = document.getElementById('adminDropdownWrap');
   const heroBtn    = document.getElementById('changeHeroBgBtn');
-  const changeBtn  = document.getElementById('btnChangePassNav');
   const body       = document.body;
 
   if (isAdmin) {
-    if (badge)     { badge.style.display = 'inline-flex'; }
-    if (changeBtn) { changeBtn.style.display = 'inline-flex'; }
-    if (navBtn)    {
-      navBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
-      navBtn.onclick   = e => { e.preventDefault(); logoutAdmin(); showToast('Logout berhasil.','info'); };
-    }
-    if (heroBtn) heroBtn.style.display = 'inline-flex';
+    if (navBtn)   navBtn.style.display = 'none';
+    if (dropdown) dropdown.style.display = 'inline-block';
+    if (heroBtn)  heroBtn.style.display = 'inline-flex';
     body.classList.add('admin-active');
   } else {
-    if (badge)     { badge.style.display = 'none'; }
-    if (changeBtn) { changeBtn.style.display = 'none'; }
-    if (navBtn)    {
+    if (navBtn) {
+      navBtn.style.display = 'inline-flex';
       navBtn.innerHTML = '<i class="fas fa-user-shield"></i> Login Admin';
       navBtn.onclick   = e => { e.preventDefault(); openLoginModal(); };
     }
-    if (heroBtn) heroBtn.style.display = 'none';
+    if (dropdown) dropdown.style.display = 'none';
+    if (heroBtn)  heroBtn.style.display = 'none';
     body.classList.remove('admin-active');
   }
 
@@ -463,6 +458,26 @@ function applyAdminState() {
   renderMinistryGrid();
   renderPengumuman();
 }
+
+function toggleAdminMenu(e) {
+  if (e) e.stopPropagation();
+  const menu = document.getElementById('adminDropdownMenu');
+  if (menu) menu.classList.toggle('open');
+}
+
+function closeAdminMenu() {
+  const menu = document.getElementById('adminDropdownMenu');
+  if (menu) menu.classList.remove('open');
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.admin-dropdown-wrap')) {
+    closeAdminMenu();
+  }
+});
+
+window.toggleAdminMenu = toggleAdminMenu;
+window.closeAdminMenu  = closeAdminMenu;
 
 function openLoginModal() {
   if (isLockedOut()) {

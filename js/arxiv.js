@@ -156,18 +156,42 @@ const FALLBACK_PAPERS = [
 ];
 
 /**
- * Fetch dari arXiv API (CORS-enabled XML)
+ * Fetch dari arXiv API dengan multi-proxy CORS fallback
  */
 async function fetchArxiv() {
   const query = encodeURIComponent(
     'cat:quant-ph OR cat:astro-ph.GA OR cat:astro-ph.CO OR cat:hep-th OR cat:hep-ph OR cat:cond-mat.mes-hall OR cat:gr-qc OR cat:physics.pop-ph'
   );
-  const url = `https://export.arxiv.org/api/query?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=36&start=0`;
+  const targetUrl = `https://export.arxiv.org/api/query?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=36&start=0`;
 
-  const resp = await fetch(url);
-  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-  const text = await resp.text();
-  return parseArxivXML(text);
+  // Urutan Endpoint (CORS proxies & direct)
+  const fetchUrls = [
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+    `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`,
+    targetUrl
+  ];
+
+  for (const url of fetchUrls) {
+    try {
+      const controller = new AbortController();
+      const timeoutId  = setTimeout(() => controller.abort(), 6000); // 6s timeout
+
+      const resp = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+
+      if (resp.ok) {
+        const text = await resp.text();
+        const papers = parseArxivXML(text);
+        if (papers && papers.length > 0) {
+          return papers;
+        }
+      }
+    } catch (e) {
+      console.warn('Attempt failed for arXiv URL:', url, e);
+    }
+  }
+
+  throw new Error('Semua endpoint arXiv CORS proxy gagal');
 }
 
 /**

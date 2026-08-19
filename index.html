@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=2.0" />
+    <link rel="stylesheet" href="css/style.css?v=3.0" />
   </head>
   <body>
     <!-- ============================================================
@@ -39,10 +39,37 @@
         </ul>
 
         <div class="nav-right">
-          <span class="admin-badge" id="adminBadge"> <i class="fas fa-shield-alt"></i> Admin Aktif </span>
-          <button class="btn-login-nav" id="btnChangePassNav" style="display: none; background: rgba(255, 255, 255, 0.12); color: var(--white)"><i class="fas fa-key"></i> Ganti Akun</button>
-          <button class="btn-login-nav" id="navLoginBtn"><i class="fas fa-user-shield"></i> Login Admin</button>
-          <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+          <button class="btn-login-nav" id="navLoginBtn">
+            <i class="fas fa-user-shield"></i> Login Admin
+          </button>
+
+          <div class="admin-dropdown-wrap" id="adminDropdownWrap" style="display:none;">
+            <button class="btn-admin-menu" id="adminMenuTrigger">
+              <i class="fas fa-user-check"></i> Panel Admin <i class="fas fa-chevron-down" style="font-size:0.7rem;margin-left:2px;"></i>
+            </button>
+            <div class="admin-dropdown-menu" id="adminDropdownMenu">
+              <div class="admin-dropdown-header">
+                <i class="fas fa-shield-alt"></i> Panel Admin HIMAFI
+              </div>
+              <a href="#" onclick="openChangePassModal(); closeAdminMenu(); event.preventDefault();">
+                <i class="fas fa-key"></i> Pengaturan Akun
+              </a>
+              <a href="#" onclick="openHeroBgModal(); closeAdminMenu(); event.preventDefault();">
+                <i class="fas fa-image"></i> Background Beranda
+              </a>
+              <a href="#" onclick="openAddPengumuman(); closeAdminMenu(); event.preventDefault();">
+                <i class="fas fa-bullhorn"></i> Tambah Pengumuman
+              </a>
+              <div class="admin-dropdown-divider"></div>
+              <a href="#" onclick="logoutAdmin(); closeAdminMenu(); event.preventDefault();" class="logout-link">
+                <i class="fas fa-sign-out-alt"></i> Logout Admin
+              </a>
+            </div>
+          </div>
+
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </div>
     </nav>
@@ -518,7 +545,7 @@
     <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-    <script src="js/arxiv.js?v=2.0"></script>
-    <script src="js/script.js?v=2.0"></script>
+    <script src="js/arxiv.js?v=3.0"></script>
+    <script src="js/script.js?v=3.0"></script>
   </body>
 </html>

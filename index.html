@@ -1,577 +1,524 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Website resmi HIMAFI UNAIR — Himpunan Mahasiswa Fisika Universitas Airlangga, Kabinet Arya Sammuttama." />
-  <title>HIMAFI UNAIR — Kabinet Arya Sammuttama</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Website resmi HIMAFI UNAIR — Himpunan Mahasiswa Fisika Universitas Airlangga, Kabinet Arya Sammuttama." />
+    <title>HIMAFI UNAIR — Kabinet Arya Sammuttama</title>
 
-  <!-- Google Fonts: Plus Jakarta Sans + DM Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Plus Jakarta Sans + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.0" />
-</head>
-<body>
-
-<!-- ============================================================
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css?v=2.0" />
+  </head>
+  <body>
+    <!-- ============================================================
      NAVBAR
      ============================================================ -->
-<nav class="navbar" id="mainNav">
-  <div class="nav-container">
-    <a href="#home" class="logo">
-      <img src="assets/images/LOGO HIMAFI (1).png" alt="Logo HIMAFI UNAIR" />
-      <span class="logo-text">HIMAFI UNAIR</span>
-    </a>
+    <nav class="navbar" id="mainNav">
+      <div class="nav-container">
+        <a href="#home" class="logo">
+          <img src="assets/images/LOGO HIMAFI (1).png" alt="Logo HIMAFI UNAIR" />
+          <span class="logo-text">HIMAFI UNAIR</span>
+        </a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#pengumuman">Pengumuman</a></li>
-      <li><a href="#about">Tentang Kami</a></li>
-      <li><a href="#pojok-sains">Pojok Sains</a></li>
-      <li><a href="#proker">Kementerian</a></li>
-      <li><a href="#dokumen">Dokumen</a></li>
-      <li><a href="#sosmed">Sosial Media</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#pengumuman">Pengumuman</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#pojok-sains">Pojok Sains</a></li>
+          <li><a href="#proker">Kementerian</a></li>
+          <li><a href="#dokumen">Dokumen</a></li>
+          <li><a href="#sosmed">Sosial Media</a></li>
+        </ul>
 
-    <div class="nav-right">
-      <span class="admin-badge" id="adminBadge">
-        <i class="fas fa-shield-alt"></i> Admin Aktif
-      </span>
-      <button class="btn-login-nav" id="btnChangePassNav" style="display:none;background:rgba(255,255,255,0.12);color:var(--white);">
-        <i class="fas fa-key"></i> Ganti Akun
-      </button>
-      <button class="btn-login-nav" id="navLoginBtn">
-        <i class="fas fa-user-shield"></i> Login Admin
-      </button>
-      <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-        <span></span><span></span><span></span>
+        <div class="nav-right">
+          <span class="admin-badge" id="adminBadge"> <i class="fas fa-shield-alt"></i> Admin Aktif </span>
+          <button class="btn-login-nav" id="btnChangePassNav" style="display: none; background: rgba(255, 255, 255, 0.12); color: var(--white)"><i class="fas fa-key"></i> Ganti Akun</button>
+          <button class="btn-login-nav" id="navLoginBtn"><i class="fas fa-user-shield"></i> Login Admin</button>
+          <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+        </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      HERO
      ============================================================ -->
-<section id="home" class="hero">
-  <div class="hero-bg" id="heroBgBase"></div>
-  <div class="hero-bg-img" id="heroBgImg"></div>
-  <div class="hero-accent"></div>
+    <section id="home" class="hero">
+      <div class="hero-bg" id="heroBgBase"></div>
+      <div class="hero-bg-img" id="heroBgImg"></div>
+      <div class="hero-accent"></div>
 
-  <div class="hero-content">
-    <span class="hero-eyebrow">HIMAFI Universitas Airlangga</span>
+      <div class="hero-content">
+        <span class="hero-eyebrow">HIMAFI Universitas Airlangga</span>
 
-    <h1 class="hero-title">
-      Kabinet
-      <span>Arya Sammuttama</span>
-    </h1>
+        <h1 class="hero-title">
+          Kabinet
+          <span>Arya Sammuttama</span>
+        </h1>
 
-    <p class="hero-desc">
-      Bersama mewujudkan HIMAFI yang inklusif, kolaboratif, dan berdampak nyata bagi seluruh Mahasiswa Fisika Universitas Airlangga dan masyarakat.
-    </p>
+        <p class="hero-desc">Bersama mewujudkan HIMAFI yang inklusif, kolaboratif, dan berdampak nyata bagi seluruh Mahasiswa Fisika Universitas Airlangga dan masyarakat.</p>
 
-    <div class="hero-cta">
-      <a href="#pojok-sains" class="btn btn-primary">
-        <i class="fas fa-book-open"></i> Pojok Sains & Jurnal
-      </a>
-      <a href="#proker" class="btn btn-outline">
-        <i class="fas fa-layer-group"></i> Program Kerja
-      </a>
-      <button id="changeHeroBgBtn" class="btn btn-outline" style="display:none;" onclick="openHeroBgModal()">
-        <i class="fas fa-image"></i> Ubah Background
-      </button>
-    </div>
+        <div class="hero-cta">
+          <a href="#pojok-sains" class="btn btn-primary"> <i class="fas fa-book-open"></i> Pojok Sains & Jurnal </a>
+          <a href="#proker" class="btn btn-outline"> <i class="fas fa-layer-group"></i> Program Kerja </a>
+          <button id="changeHeroBgBtn" class="btn btn-outline" style="display: none" onclick="openHeroBgModal()"><i class="fas fa-image"></i> Ubah Background</button>
+        </div>
 
-    <div class="hero-stat-row">
-      <div class="hero-stat"><h3>1983</h3><p>Tahun Berdiri</p></div>
-      <div class="hero-stat"><h3>7+</h3><p>Kementerian Aktif</p></div>
-      <div class="hero-stat"><h3>40+</h3><p>Program Kerja</p></div>
-    </div>
-  </div>
-</section>
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <h3>1983</h3>
+            <p>Tahun Berdiri</p>
+          </div>
+          <div class="hero-stat">
+            <h3>7+</h3>
+            <p>Kementerian Aktif</p>
+          </div>
+          <div class="hero-stat">
+            <h3>40+</h3>
+            <p>Program Kerja</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      PENGUMUMAN & INFORMASI TERBARU
      ============================================================ -->
-<section id="pengumuman" class="pengumuman-section">
-  <div class="container">
-    <div class="pengumuman-header">
-      <div>
-        <span class="sec-label"><i class="fas fa-bullhorn"></i> Informasi Terkini</span>
-        <h2 class="sec-title">Pengumuman & Berita</h2>
-        <p class="sec-sub">Informasi resmi dari BPI dan seluruh kementerian HIMAFI UNAIR.</p>
+    <section id="pengumuman" class="pengumuman-section">
+      <div class="container">
+        <div class="pengumuman-header">
+          <div>
+            <span class="sec-label"><i class="fas fa-bullhorn"></i> Informasi Terkini</span>
+            <h2 class="sec-title">Pengumuman & Berita</h2>
+            <p class="sec-sub">Informasi resmi dari untuk seluruh warga HIMAFI UNAIR.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" id="addPengumumanBtn" style="display: none" onclick="openAddPengumuman()"><i class="fas fa-plus"></i> Tambah Pengumuman</button>
+        </div>
+
+        <div id="pengumumanList"></div>
+        <p id="pengumumanEmpty" style="display: none; text-align: center; color: var(--mid-gray); padding: 40px 0">
+          <i class="fas fa-inbox" style="font-size: 2rem; display: block; margin-bottom: 10px"></i>
+          Belum ada pengumuman.
+        </p>
       </div>
-      <button class="btn btn-primary btn-sm" id="addPengumumanBtn" style="display:none;" onclick="openAddPengumuman()">
-        <i class="fas fa-plus"></i> Tambah Pengumuman
-      </button>
-    </div>
+    </section>
 
-    <div id="pengumumanList"></div>
-    <p id="pengumumanEmpty" style="display:none;text-align:center;color:var(--mid-gray);padding:40px 0;">
-      <i class="fas fa-inbox" style="font-size:2rem;display:block;margin-bottom:10px;"></i>
-      Belum ada pengumuman.
-    </p>
-  </div>
-</section>
-
-
-<!-- ============================================================
+    <!-- ============================================================
      TENTANG KAMI
      ============================================================ -->
-<section id="about" class="about-section">
-  <div class="container">
-    <span class="sec-label"><i class="fas fa-info-circle"></i> Profil Organisasi</span>
-    <h2 class="sec-title">Tentang HIMAFI UNAIR</h2>
+    <section id="about" class="about-section">
+      <div class="container">
+        <span class="sec-label"><i class="fas fa-info-circle"></i> Profil Organisasi</span>
+        <h2 class="sec-title">Tentang HIMAFI UNAIR</h2>
 
-    <div class="about-layout">
-      <div class="about-text">
-        <p>
-          Himpunan Mahasiswa Fisika Universitas Airlangga (HIMAFI UNAIR) adalah organisasi kemahasiswaan yang menjadi wadah aspirasi, pengembangan akademik, dan potensi seluruh mahasiswa Departemen Fisika sejak tahun <strong>1983</strong>.
-        </p>
-        <p>
-          Dalam setiap periode kepengurusan, HIMAFI berkomitmen menghadirkan program yang tidak sekadar rutinitas, tetapi bermakna dan berdampak luas — baik bagi warga fisika maupun masyarakat di sekitarnya.
-        </p>
-        <p>
-          Kabinet <strong>Arya Sammuttama</strong> hadir dengan semangat kolaborasi lintas kementerian, mengutamakan inklusivitas, transparansi, dan inovasi berbasis sains.
-        </p>
+        <div class="about-layout">
+          <div class="about-text">
+            <p>
+              Himpunan Mahasiswa Fisika Universitas Airlangga (HIMAFI UNAIR) adalah organisasi kemahasiswaan yang menjadi wadah aspirasi, pengembangan akademik, dan potensi seluruh mahasiswa Departemen Fisika sejak tahun
+              <strong>1983</strong>.
+            </p>
+            <p>Dalam setiap periode kepengurusan, HIMAFI berkomitmen menghadirkan program yang tidak sekadar rutinitas, tetapi bermakna dan berdampak luas — baik bagi warga fisika maupun masyarakat di sekitarnya.</p>
+            <p>Kabinet <strong>Arya Sammuttama</strong> hadir dengan semangat kolaborasi lintas kementerian, mengutamakan inklusivitas, transparansi, dan inovasi berbasis sains.</p>
 
-        <div class="about-highlight-box">
-          <h3><i class="fas fa-crown" style="margin-right:10px;"></i>Kabinet Arya Sammuttama</h3>
-          <p>
-            Arya Sammuttama — melambangkan keberanian dan keunggulan yang bijaksana. Sebuah komitmen untuk membawa HIMAFI menjadi himpunan yang berdampak nyata di lingkungan kampus dan masyarakat.
-          </p>
+            <div class="about-highlight-box">
+              <h3><i class="fas fa-crown" style="margin-right: 10px"></i>Kabinet Arya Sammuttama</h3>
+              <p>Arya Sammuttama — melambangkan keberanian dan keunggulan yang bijaksana. Sebuah komitmen untuk membawa HIMAFI menjadi himpunan yang berdampak nyata di lingkungan kampus dan masyarakat.</p>
+            </div>
+          </div>
+
+          <div class="about-visi-misi">
+            <div class="visi-misi-card">
+              <h4><i class="fas fa-eye"></i> Visi</h4>
+              <p>Menjadikan HIMAFI UNAIR sebagai organisasi yang inklusif, kolaboratif, dan memberikan dampak nyata bagi warga fisika dan masyarakat luas.</p>
+            </div>
+            <div class="visi-misi-card">
+              <h4><i class="fas fa-bullseye"></i> Misi</h4>
+              <p>Membangun ekosistem akademik dan organisasi yang sehat, mendorong kreativitas, kolaborasi, dan pengabdian masyarakat berbasis sains dan teknologi.</p>
+            </div>
+            <div class="visi-misi-card">
+              <h4><i class="fas fa-history"></i> Sejak 1983</h4>
+              <p>Lebih dari empat dekade hadir sebagai rumah bagi seluruh mahasiswa Fisika UNAIR lintas angkatan, dengan warisan nilai dan tradisi yang terus dijaga.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="about-visi-misi">
-        <div class="visi-misi-card">
-          <h4><i class="fas fa-eye"></i> Visi</h4>
-          <p>Menjadikan HIMAFI UNAIR sebagai organisasi yang inklusif, kolaboratif, dan memberikan dampak nyata bagi warga fisika dan masyarakat luas.</p>
-        </div>
-        <div class="visi-misi-card">
-          <h4><i class="fas fa-bullseye"></i> Misi</h4>
-          <p>Membangun ekosistem akademik dan organisasi yang sehat, mendorong kreativitas, kolaborasi, dan pengabdian masyarakat berbasis sains dan teknologi.</p>
-        </div>
-        <div class="visi-misi-card">
-          <h4><i class="fas fa-history"></i> Sejak 1983</h4>
-          <p>Lebih dari empat dekade hadir sebagai rumah bagi seluruh mahasiswa Fisika UNAIR lintas angkatan, dengan warisan nilai dan tradisi yang terus dijaga.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
+    <!-- ============================================================
      BAGAN KEPENGURUSAN
      ============================================================ -->
-<section class="org-section">
-  <div class="container">
-    <span class="sec-label"><i class="fas fa-sitemap"></i> Struktur Organisasi</span>
-    <h2 class="sec-title">Bagan Kepengurusan</h2>
-    <p class="sec-sub">Susunan pengurus HIMAFI UNAIR Kabinet Arya Sammuttama periode aktif.</p>
+    <section class="org-section">
+      <div class="container">
+        <span class="sec-label"><i class="fas fa-sitemap"></i> Struktur Organisasi</span>
+        <h2 class="sec-title">Bagan Kepengurusan</h2>
+        <p class="sec-sub">Susunan pengurus HIMAFI UNAIR Kabinet Arya Sammuttama periode 2026.</p>
 
-    <div class="org-chart-container" id="orgChartContainer"></div>
-  </div>
-</section>
+        <div class="org-chart-container" id="orgChartContainer"></div>
+      </div>
+    </section>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      POJOK SAINS — arXiv Journal Board
      ============================================================ -->
-<section id="pojok-sains" class="pojok-sains-section">
-  <div class="container">
-    <div class="pojok-sains-header">
-      <div>
-        <span class="sec-label light"><i class="fas fa-atom"></i> Sains & Riset Terkini</span>
-        <h2 class="sec-title light">Pojok Sains HIMAFI</h2>
-        <p class="sec-sub light">Paper & jurnal fisika terbaru langsung dari <strong style="color:var(--gold);">arXiv.org</strong> (Cornell University). Diperbarui otomatis setiap 3 hari.</p>
-        <span class="arxiv-credit">
-          <i class="fas fa-database"></i> Sumber: arXiv.org — Open Access Physics Preprints
-        </span>
-      </div>
-    </div>
-
-    <!-- Filter Topik -->
-    <div class="pojok-filters" id="pojokFilters"></div>
-
-    <!-- Meta bar: last update + refresh button -->
-    <div class="pojok-meta-bar">
-      <span class="pojok-last-update" id="pojokLastUpdate"></span>
-      <button class="btn-refresh-arxiv" onclick="refreshPapers()">
-        <i class="fas fa-sync-alt"></i> Perbarui Sekarang
-      </button>
-    </div>
-
-    <!-- Grid Jurnal -->
-    <div class="pojok-grid" id="pojokGrid">
-      <!-- diisi oleh arxiv.js -->
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     BPI, KEMENTERIAN & PROGRAM KERJA
-     ============================================================ -->
-<section id="proker" class="proker-section">
-  <div class="container">
-    <span class="sec-label"><i class="fas fa-users"></i> Struktur Kementerian</span>
-    <h2 class="sec-title">BPI, Kementerian & Program Kerja</h2>
-    <p class="sec-sub">Klik kementerian untuk melihat rincian agenda dan program kerja yang telah dan akan dilaksanakan.</p>
-
-    <div class="ministry-grid" id="ministryGrid"></div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     DOKUMEN RESMI PROGRAM STUDI
-     ============================================================ -->
-<section id="dokumen" class="dokumen-banner">
-  <div class="container">
-    <div class="dokumen-inner">
-      <div>
-        <h3><i class="fas fa-folder-open" style="color:var(--gold);margin-right:10px;"></i>Dokumen Program Studi Fisika</h3>
-        <p>Akses kurikulum, panduan akademik, dan dokumen resmi Prodi Fisika FST Universitas Airlangga.</p>
-      </div>
-      <a href="https://fisika.fst.unair.ac.id/dokumen-program-studi/" target="_blank" rel="noopener" class="btn btn-primary">
-        <i class="fas fa-external-link-alt"></i> Buka Dokumen Resmi
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SOSIAL MEDIA
-     ============================================================ -->
-<section id="sosmed" class="sosmed-section">
-  <div class="container">
-    <span class="sec-label"><i class="fas fa-share-alt"></i> Media Resmi</span>
-    <h2 class="sec-title">Ikuti HIMAFI UNAIR</h2>
-    <p class="sec-sub">Update kegiatan, sains, dan informasi terbaru melalui kanal media resmi kami.</p>
-
-    <div class="sosmed-grid">
-      <a class="sosmed-card" href="https://www.instagram.com/himafi_unair" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
-      <a class="sosmed-card" href="https://www.tiktok.com/@himafi_unair" target="_blank" rel="noopener">
-        <i class="fab fa-tiktok"></i>
-        <span>TikTok</span>
-      </a>
-      <a class="sosmed-card" href="https://www.youtube.com/@himafi_unair" target="_blank" rel="noopener">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube</span>
-      </a>
-      <a class="sosmed-card" href="mailto:himafi@fisika.unair.ac.id">
-        <i class="fas fa-envelope"></i>
-        <span>Email Resmi</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <p>&copy; 2026 HIMAFI UNAIR — Himpunan Mahasiswa Fisika Universitas Airlangga. Kabinet Arya Sammuttama.</p>
-      <p><a href="https://fisika.fst.unair.ac.id" target="_blank" rel="noopener" style="color:rgba(255,255,255,.35);text-decoration:underline;">fisika.fst.unair.ac.id</a></p>
-    </div>
-  </div>
-</footer>
-
-
-<!-- ============================================================
-     MODAL 1: LOGIN ADMIN (Secured)
-     ============================================================ -->
-<div class="modal-overlay" id="loginModal">
-  <div class="modal-box" style="max-width:420px;">
-    <div class="modal-head">
-      <h3><i class="fas fa-lock"></i> Login Admin HIMAFI</h3>
-      <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
-    </div>
-    <div class="modal-body">
-
-      <!-- Lockout Warning -->
-      <div class="lockout-warning" id="lockoutWarning"></div>
-
-      <form id="loginForm" autocomplete="off">
-        <div class="form-group">
-          <label class="form-label" for="loginUser">Username</label>
-          <input type="text" id="loginUser" class="form-control" placeholder="Username admin" autocomplete="off" maxlength="32" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="loginPass">Password</label>
-          <input type="password" id="loginPass" class="form-control" placeholder="Password" autocomplete="new-password" maxlength="64" required />
-        </div>
-
-        <!-- Math CAPTCHA -->
-        <div class="form-group">
-          <label class="form-label">Verifikasi Keamanan</label>
-          <div class="captcha-box">
-            <span class="captcha-question" id="captchaQuestion">Loading...</span>
-            <input type="number" id="captchaInput" class="captcha-input" placeholder="?" min="0" max="200" required />
+    <section id="pojok-sains" class="pojok-sains-section">
+      <div class="container">
+        <div class="pojok-sains-header">
+          <div>
+            <span class="sec-label light"><i class="fas fa-atom"></i> Sains & Riset Terkini</span>
+            <h2 class="sec-title light">Pojok Sains HIMAFI</h2>
+            <p class="sec-sub light">Paper & jurnal fisika terbaru langsung dari <strong style="color: var(--gold)">arXiv.org</strong> (Cornell University). Diperbarui otomatis setiap 3 hari.</p>
+            <span class="arxiv-credit"> <i class="fas fa-database"></i> Sumber: arXiv.org — Open Access Physics Preprints </span>
           </div>
         </div>
 
-        <!-- Attempt Dots -->
-        <div class="login-attempt-indicator">
-          Percobaan tersisa:
-          <span id="aDot0" class="attempt-dot"></span>
-          <span id="aDot1" class="attempt-dot"></span>
-          <span id="aDot2" class="attempt-dot"></span>
-          <span id="aDot3" class="attempt-dot"></span>
-          <span id="aDot4" class="attempt-dot"></span>
+        <!-- Filter Topik -->
+        <div class="pojok-filters" id="pojokFilters"></div>
+
+        <!-- Meta bar: last update + refresh button -->
+        <div class="pojok-meta-bar">
+          <span class="pojok-last-update" id="pojokLastUpdate"></span>
+          <button class="btn-refresh-arxiv" onclick="refreshPapers()"><i class="fas fa-sync-alt"></i> Perbarui Sekarang</button>
         </div>
 
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:18px;">
-          <i class="fas fa-sign-in-alt"></i> Masuk
-        </button>
-      </form>
+        <!-- Grid Jurnal -->
+        <div class="pojok-grid" id="pojokGrid">
+          <!-- diisi oleh arxiv.js -->
+        </div>
+      </div>
+    </section>
 
-      <p style="font-size:0.74rem;color:var(--mid-gray);text-align:center;margin-top:14px;">
-        <i class="fas fa-shield-alt"></i> Dilindungi SHA-256 · Lockout 15 menit setelah 5 kali gagal
-      </p>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     MODAL 1.5: GANTI AKUN / PASSWORD ADMIN
+    <!-- ============================================================
+     KEMENTERIAN & PROGRAM KERJA
      ============================================================ -->
-<div class="modal-overlay" id="changePassModal">
-  <div class="modal-box" style="max-width:440px;">
-    <div class="modal-head">
-      <h3><i class="fas fa-key"></i> Pengaturan Akun Admin</h3>
-      <button class="modal-close" onclick="closeModal('changePassModal')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <form id="changePassForm" autocomplete="off">
-        <div class="form-group">
-          <label class="form-label" for="changeOldPass">Password Lama Saat Ini</label>
-          <input type="password" id="changeOldPass" class="form-control" placeholder="Masukkan password lama" required maxlength="64" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="changeUser">Username Baru</label>
-          <input type="text" id="changeUser" class="form-control" placeholder="Username baru admin" required maxlength="32" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="changeNewPass">Password Baru (min 6 karakter)</label>
-          <input type="password" id="changeNewPass" class="form-control" placeholder="Password baru" required minlength="6" maxlength="64" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="changeConfirmPass">Konfirmasi Password Baru</label>
-          <input type="password" id="changeConfirmPass" class="form-control" placeholder="Ketik ulang password baru" required minlength="6" maxlength="64" />
-        </div>
+    <section id="proker" class="proker-section">
+      <div class="container">
+        <span class="sec-label"><i class="fas fa-users"></i> Struktur Kementerian</span>
+        <h2 class="sec-title">Kementerian & Program Kerja</h2>
+        <p class="sec-sub">Klik kementerian untuk melihat rincian agenda dan program kerja yang telah dan akan dilaksanakan.</p>
 
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px;">
-          <i class="fas fa-save"></i> Simpan Perubahan Akun
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
+        <div class="ministry-grid" id="ministryGrid"></div>
+      </div>
+    </section>
 
-
-<!-- ============================================================
-     MODAL 2: HERO BACKGROUND
+    <!-- ============================================================
+     DOKUMEN RESMI PROGRAM STUDI
      ============================================================ -->
-<div class="modal-overlay" id="heroBgModal">
-  <div class="modal-box" style="max-width:420px;">
-    <div class="modal-head">
-      <h3><i class="fas fa-image"></i> Ubah Background Beranda</h3>
-      <button class="modal-close" onclick="closeModal('heroBgModal')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label class="form-label">Pilih Gambar (&lt; 3 MB)</label>
-        <input type="file" id="heroBgInput" class="form-control" accept="image/*" />
-        <p class="form-hint">Gambar akan dikompresi otomatis. Ukuran maksimal setelah kompresi: 3 MB.</p>
+    <section id="dokumen" class="dokumen-banner">
+      <div class="container">
+        <div class="dokumen-inner">
+          <div>
+            <h3><i class="fas fa-folder-open" style="color: var(--gold); margin-right: 10px"></i>Dokumen Program Studi Fisika</h3>
+            <p>Akses kurikulum, panduan akademik, dan dokumen resmi Prodi Fisika FST Universitas Airlangga.</p>
+          </div>
+          <a href="https://fisika.fst.unair.ac.id/dokumen-program-studi/" target="_blank" rel="noopener" class="btn btn-primary"> <i class="fas fa-external-link-alt"></i> Buka Dokumen Resmi </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SOSIAL MEDIA
+     ============================================================ -->
+    <section id="sosmed" class="sosmed-section">
+      <div class="container">
+        <span class="sec-label"><i class="fas fa-share-alt"></i> Media Resmi</span>
+        <h2 class="sec-title">Ikuti HIMAFI UNAIR</h2>
+        <p class="sec-sub">Update kegiatan, sains, dan informasi terbaru melalui kanal media resmi kami.</p>
+
+        <div class="sosmed-grid">
+          <a class="sosmed-card" href="https://www.instagram.com/himafi_unair" target="_blank" rel="noopener">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          <a class="sosmed-card" href="https://www.tiktok.com/@himafi_unair" target="_blank" rel="noopener">
+            <i class="fab fa-tiktok"></i>
+            <span>TikTok</span>
+          </a>
+          <a class="sosmed-card" href="https://www.youtube.com/@himafi_unair" target="_blank" rel="noopener">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          <a class="sosmed-card" href="mailto:himafi@fisika.unair.ac.id">
+            <i class="fas fa-envelope"></i>
+            <span>Email Resmi</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     FOOTER
+     ============================================================ -->
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <p>&copy; 2026 HIMAFI UNAIR — Himpunan Mahasiswa Fisika Universitas Airlangga. Kabinet Arya Sammuttama.</p>
+          <p><a href="https://fisika.fst.unair.ac.id" target="_blank" rel="noopener" style="color: rgba(255, 255, 255, 0.35); text-decoration: underline">fisika.fst.unair.ac.id</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+     MODAL 1: LOGIN ADMIN (Secured)
+     ============================================================ -->
+    <div class="modal-overlay" id="loginModal">
+      <div class="modal-box" style="max-width: 420px">
+        <div class="modal-head">
+          <h3><i class="fas fa-lock"></i> Login Admin HIMAFI</h3>
+          <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!-- Lockout Warning -->
+          <div class="lockout-warning" id="lockoutWarning"></div>
+
+          <form id="loginForm" autocomplete="off">
+            <div class="form-group">
+              <label class="form-label" for="loginUser">Username</label>
+              <input type="text" id="loginUser" class="form-control" placeholder="Username admin" autocomplete="off" maxlength="32" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="loginPass">Password</label>
+              <input type="password" id="loginPass" class="form-control" placeholder="Password" autocomplete="new-password" maxlength="64" required />
+            </div>
+
+            <!-- Math CAPTCHA -->
+            <div class="form-group">
+              <label class="form-label">Verifikasi Keamanan</label>
+              <div class="captcha-box">
+                <span class="captcha-question" id="captchaQuestion">Loading...</span>
+                <input type="number" id="captchaInput" class="captcha-input" placeholder="?" min="0" max="200" required />
+              </div>
+            </div>
+
+            <!-- Attempt Dots -->
+            <div class="login-attempt-indicator">
+              Percobaan tersisa:
+              <span id="aDot0" class="attempt-dot"></span>
+              <span id="aDot1" class="attempt-dot"></span>
+              <span id="aDot2" class="attempt-dot"></span>
+              <span id="aDot3" class="attempt-dot"></span>
+              <span id="aDot4" class="attempt-dot"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 18px"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+          </form>
+
+          <p style="font-size: 0.74rem; color: var(--mid-gray); text-align: center; margin-top: 14px"><i class="fas fa-shield-alt"></i> Dilindungi SHA-256 · Lockout 15 menit setelah 5 kali gagal</p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <!-- ============================================================
+     MODAL 1.5: GANTI AKUN / PASSWORD ADMIN
+     ============================================================ -->
+    <div class="modal-overlay" id="changePassModal">
+      <div class="modal-box" style="max-width: 440px">
+        <div class="modal-head">
+          <h3><i class="fas fa-key"></i> Pengaturan Akun Admin</h3>
+          <button class="modal-close" onclick="closeModal('changePassModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="changePassForm" autocomplete="off">
+            <div class="form-group">
+              <label class="form-label" for="changeOldPass">Password Lama Saat Ini</label>
+              <input type="password" id="changeOldPass" class="form-control" placeholder="Masukkan password lama" required maxlength="64" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="changeUser">Username Baru</label>
+              <input type="text" id="changeUser" class="form-control" placeholder="Username baru admin" required maxlength="32" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="changeNewPass">Password Baru (min 6 karakter)</label>
+              <input type="password" id="changeNewPass" class="form-control" placeholder="Password baru" required minlength="6" maxlength="64" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="changeConfirmPass">Konfirmasi Password Baru</label>
+              <input type="password" id="changeConfirmPass" class="form-control" placeholder="Ketik ulang password baru" required minlength="6" maxlength="64" />
+            </div>
 
-<!-- ============================================================
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 14px"><i class="fas fa-save"></i> Simpan Perubahan Akun</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+     MODAL 2: HERO BACKGROUND
+     ============================================================ -->
+    <div class="modal-overlay" id="heroBgModal">
+      <div class="modal-box" style="max-width: 420px">
+        <div class="modal-head">
+          <h3><i class="fas fa-image"></i> Ubah Background Beranda</h3>
+          <button class="modal-close" onclick="closeModal('heroBgModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Pilih Gambar (&lt; 3 MB)</label>
+            <input type="file" id="heroBgInput" class="form-control" accept="image/*" />
+            <p class="form-hint">Gambar akan dikompresi otomatis. Ukuran maksimal setelah kompresi: 3 MB.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
      MODAL 3: EDIT PENGURUS (Bagan)
      ============================================================ -->
-<div class="modal-overlay" id="orgMemberModal">
-  <div class="modal-box" style="max-width:440px;">
-    <div class="modal-head">
-      <h3 id="orgModalTitle"><i class="fas fa-user-edit"></i> Edit Pengurus</h3>
-      <button class="modal-close" onclick="closeModal('orgMemberModal')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <form id="orgForm">
-        <div class="form-group">
-          <label class="form-label" for="orgMemberName">Nama Lengkap Pengurus</label>
-          <input type="text" id="orgMemberName" class="form-control" placeholder="Nama pengurus..." required maxlength="80" />
+    <div class="modal-overlay" id="orgMemberModal">
+      <div class="modal-box" style="max-width: 440px">
+        <div class="modal-head">
+          <h3 id="orgModalTitle"><i class="fas fa-user-edit"></i> Edit Pengurus</h3>
+          <button class="modal-close" onclick="closeModal('orgMemberModal')">&times;</button>
         </div>
-        <div class="form-group">
-          <label class="form-label">Foto Pengurus (&lt; 3 MB)</label>
-          <input type="file" id="orgImgInput" class="form-control" accept="image/*" />
-          <p class="form-hint" id="orgImgStatus"></p>
-          <img id="orgImgPreview" class="img-preview-box" alt="Preview" />
+        <div class="modal-body">
+          <form id="orgForm">
+            <div class="form-group">
+              <label class="form-label" for="orgMemberName">Nama Lengkap Pengurus</label>
+              <input type="text" id="orgMemberName" class="form-control" placeholder="Nama pengurus..." required maxlength="80" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Foto Pengurus (&lt; 3 MB)</label>
+              <input type="file" id="orgImgInput" class="form-control" accept="image/*" />
+              <p class="form-hint" id="orgImgStatus"></p>
+              <img id="orgImgPreview" class="img-preview-box" alt="Preview" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px"><i class="fas fa-save"></i> Simpan</button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:10px;">
-          <i class="fas fa-save"></i> Simpan
-        </button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      MODAL 4: PENGUMUMAN FORM
      ============================================================ -->
-<div class="modal-overlay" id="pengumumanModal">
-  <div class="modal-box" style="max-width:500px;">
-    <div class="modal-head">
-      <h3 id="pengModalTitle"><i class="fas fa-bullhorn"></i> Tambah Pengumuman</h3>
-      <button class="modal-close" onclick="closeModal('pengumumanModal')">&times;</button>
+    <div class="modal-overlay" id="pengumumanModal">
+      <div class="modal-box" style="max-width: 500px">
+        <div class="modal-head">
+          <h3 id="pengModalTitle"><i class="fas fa-bullhorn"></i> Tambah Pengumuman</h3>
+          <button class="modal-close" onclick="closeModal('pengumumanModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="pengumumanForm">
+            <div class="form-group">
+              <label class="form-label" for="pengUrgensi">Tingkat Urgensi</label>
+              <select id="pengUrgensi" class="form-control">
+                <option value="info">🔵 Informasi Umum</option>
+                <option value="penting">🔴 Penting / Mendesak</option>
+                <option value="event">🟢 Event / Kegiatan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pengJudul">Judul Pengumuman</label>
+              <input type="text" id="pengJudul" class="form-control" placeholder="Judul pengumuman..." required maxlength="120" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pengIsi">Isi Pengumuman</label>
+              <textarea id="pengIsi" class="form-control" rows="3" placeholder="Isi pengumuman..." required maxlength="600"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pengTanggal">Tanggal</label>
+              <input type="date" id="pengTanggal" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="pengPengirim">Pengirim / Kementerian</label>
+              <input type="text" id="pengPengirim" class="form-control" placeholder="Misal: Kementerian MEDINFO" required maxlength="60" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px"><i class="fas fa-save"></i> Simpan Pengumuman</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="modal-body">
-      <form id="pengumumanForm">
-        <div class="form-group">
-          <label class="form-label" for="pengUrgensi">Tingkat Urgensi</label>
-          <select id="pengUrgensi" class="form-control">
-            <option value="info">🔵 Informasi Umum</option>
-            <option value="penting">🔴 Penting / Mendesak</option>
-            <option value="event">🟢 Event / Kegiatan</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="pengJudul">Judul Pengumuman</label>
-          <input type="text" id="pengJudul" class="form-control" placeholder="Judul pengumuman..." required maxlength="120" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="pengIsi">Isi Pengumuman</label>
-          <textarea id="pengIsi" class="form-control" rows="3" placeholder="Isi pengumuman..." required maxlength="600"></textarea>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="pengTanggal">Tanggal</label>
-          <input type="date" id="pengTanggal" class="form-control" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="pengPengirim">Pengirim / Kementerian</label>
-          <input type="text" id="pengPengirim" class="form-control" placeholder="Misal: Kementerian MEDINFO" required maxlength="60" />
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:10px;">
-          <i class="fas fa-save"></i> Simpan Pengumuman
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      MODAL 5: DETAIL KEMENTERIAN
      ============================================================ -->
-<div class="modal-overlay" id="ministryModal">
-  <div class="modal-box modal-lg">
-    <div class="modal-head">
-      <h3 id="ministryModalTitle"><i class="fas fa-users"></i> Kementerian</h3>
-      <button class="modal-close" onclick="closeMinistryModal()">&times;</button>
+    <div class="modal-overlay" id="ministryModal">
+      <div class="modal-box modal-lg">
+        <div class="modal-head">
+          <h3 id="ministryModalTitle"><i class="fas fa-users"></i> Kementerian</h3>
+          <button class="modal-close" onclick="closeMinistryModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="ministryModalBody"></div>
+      </div>
     </div>
-    <div class="modal-body" id="ministryModalBody"></div>
-  </div>
-</div>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      MODAL 6: DETAIL KEGIATAN
      ============================================================ -->
-<div class="modal-overlay" id="activityDetailModal">
-  <div class="modal-box modal-lg">
-    <div class="modal-head">
-      <h3 id="activityDetailTitle"><i class="fas fa-info-circle"></i> Detail Kegiatan</h3>
-      <button class="modal-close" onclick="closeModal('activityDetailModal')">&times;</button>
+    <div class="modal-overlay" id="activityDetailModal">
+      <div class="modal-box modal-lg">
+        <div class="modal-head">
+          <h3 id="activityDetailTitle"><i class="fas fa-info-circle"></i> Detail Kegiatan</h3>
+          <button class="modal-close" onclick="closeModal('activityDetailModal')">&times;</button>
+        </div>
+        <div class="modal-body" id="activityDetailBody"></div>
+      </div>
     </div>
-    <div class="modal-body" id="activityDetailBody"></div>
-  </div>
-</div>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      MODAL 7: FORM TAMBAH / EDIT KEGIATAN
      ============================================================ -->
-<div class="modal-overlay" id="agendaModal">
-  <div class="modal-box" style="max-width:520px;">
-    <div class="modal-head">
-      <h3 id="agendaModalTitle"><i class="fas fa-calendar-plus"></i> Kegiatan</h3>
-      <button class="modal-close" onclick="closeModal('agendaModal')">&times;</button>
+    <div class="modal-overlay" id="agendaModal">
+      <div class="modal-box" style="max-width: 520px">
+        <div class="modal-head">
+          <h3 id="agendaModalTitle"><i class="fas fa-calendar-plus"></i> Kegiatan</h3>
+          <button class="modal-close" onclick="closeModal('agendaModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="agendaForm">
+            <div class="form-group">
+              <label class="form-label" for="agendaCategory">Kategori</label>
+              <select id="agendaCategory" class="form-control">
+                <option value="Proker">Program Kerja (Proker)</option>
+                <option value="Agenda">Agenda / Rutinitas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="agendaTitle">Nama Kegiatan</label>
+              <input type="text" id="agendaTitle" class="form-control" placeholder="Nama kegiatan..." required maxlength="120" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="agendaDate">Tanggal / Jadwal</label>
+              <input type="text" id="agendaDate" class="form-control" placeholder="Misal: 15–17 Oktober 2026" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="agendaStatus">Status</label>
+              <select id="agendaStatus" class="form-control">
+                <option value="comingsoon">📅 Coming Soon</option>
+                <option value="ongoing">⚡ On Going</option>
+                <option value="completed">✓ Completed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="agendaDesc">Deskripsi Singkat</label>
+              <textarea id="agendaDesc" class="form-control" rows="2" placeholder="Ringkasan 1–2 kalimat..." required maxlength="300"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="agendaFullDesc">Penjelasan Lengkap</label>
+              <textarea id="agendaFullDesc" class="form-control" rows="4" placeholder="Tujuan, latar belakang, dan rincian pelaksanaan..." maxlength="1500"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Foto Kegiatan (&lt; 3 MB)</label>
+              <input type="file" id="agendaImgInput" class="form-control" accept="image/*" />
+              <p class="form-hint" id="agendaImgStatus"></p>
+              <img id="agendaImgPreview" class="img-preview-box" alt="Preview" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 10px"><i class="fas fa-save"></i> Simpan Kegiatan</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="modal-body">
-      <form id="agendaForm">
-        <div class="form-group">
-          <label class="form-label" for="agendaCategory">Kategori</label>
-          <select id="agendaCategory" class="form-control">
-            <option value="Proker">Program Kerja (Proker)</option>
-            <option value="Agenda">Agenda / Rutinitas</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="agendaTitle">Nama Kegiatan</label>
-          <input type="text" id="agendaTitle" class="form-control" placeholder="Nama kegiatan..." required maxlength="120" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="agendaDate">Tanggal / Jadwal</label>
-          <input type="text" id="agendaDate" class="form-control" placeholder="Misal: 15–17 Oktober 2026" />
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="agendaStatus">Status</label>
-          <select id="agendaStatus" class="form-control">
-            <option value="comingsoon">📅 Coming Soon</option>
-            <option value="ongoing">⚡ On Going</option>
-            <option value="completed">✓ Completed</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="agendaDesc">Deskripsi Singkat</label>
-          <textarea id="agendaDesc" class="form-control" rows="2" placeholder="Ringkasan 1–2 kalimat..." required maxlength="300"></textarea>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="agendaFullDesc">Penjelasan Lengkap</label>
-          <textarea id="agendaFullDesc" class="form-control" rows="4" placeholder="Tujuan, latar belakang, dan rincian pelaksanaan..." maxlength="1500"></textarea>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Foto Kegiatan (&lt; 3 MB)</label>
-          <input type="file" id="agendaImgInput" class="form-control" accept="image/*" />
-          <p class="form-hint" id="agendaImgStatus"></p>
-          <img id="agendaImgPreview" class="img-preview-box" alt="Preview" />
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:10px;">
-          <i class="fas fa-save"></i> Simpan Kegiatan
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
 
-
-<!-- ============================================================
+    <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-<script src="js/arxiv.js?v=2.0"></script>
-<script src="js/script.js?v=2.0"></script>
-
-</body>
+    <script src="js/arxiv.js?v=2.0"></script>
+    <script src="js/script.js?v=2.0"></script>
+  </body>
 </html>
